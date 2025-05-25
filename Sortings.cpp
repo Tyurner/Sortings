@@ -497,8 +497,8 @@ int main() {
         return 1;
     }
 
-    /* для жесткой задачи int arr[] = {5, 6, -9, 0};
-    int n = sizeof(arr) / sizeof(arr[0]);*/
+    //для жесткой задачи int arr[] = {5, 6, -9, 0};
+    //int n = sizeof(arr) / sizeof(arr[0]);
 
     printf("Исходный массив:\n");
     printArray(arr, n);
