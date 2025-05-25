@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="BinarySearchTree.cpp" />
     <ClCompile Include="HashTables.cpp" />
+    <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="Sortings.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
