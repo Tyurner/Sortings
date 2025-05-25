@@ -1,4 +1,4 @@
-////метод цепочек
+п»ї////РјРµС‚РѕРґ С†РµРїРѕС‡РµРє
 //#include <stdio.h>
 //#include <stdlib.h>
 //#include <string.h>
@@ -6,19 +6,19 @@
 //
 //#define TABLE_SIZE 10
 //
-//// Узел списка (цепочка)
+//// РЈР·РµР» СЃРїРёСЃРєР° (С†РµРїРѕС‡РєР°)
 //typedef struct Node {
 //    char* key;
 //    int value;
 //    struct Node* next;
 //} Node;
 //
-//// Хэш-таблица
+//// РҐСЌС€-С‚Р°Р±Р»РёС†Р°
 //typedef struct HashTable {
 //    Node** buckets;
 //} HashTable;
 //
-//// Хэш-функция (простой пример)
+//// РҐСЌС€-С„СѓРЅРєС†РёСЏ (РїСЂРѕСЃС‚РѕР№ РїСЂРёРјРµСЂ)
 //unsigned int hash(const char* key) {
 //    unsigned long int value = 0;
 //    while (*key)
@@ -26,7 +26,7 @@
 //    return value % TABLE_SIZE;
 //}
 //
-//// Создание узла
+//// РЎРѕР·РґР°РЅРёРµ СѓР·Р»Р°
 //Node* create_node(const char* key, int value) {
 //    Node* node = (Node*)malloc(sizeof(Node));
 //    node->key = _strdup(key);
@@ -35,19 +35,19 @@
 //    return node;
 //}
 //
-//// Инициализация хэш-таблицы
+//// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ С…СЌС€-С‚Р°Р±Р»РёС†С‹
 //HashTable* create_hash_table() {
 //    HashTable* table = (HashTable*)malloc(sizeof(HashTable));
 //    table->buckets = (Node**)calloc(TABLE_SIZE, sizeof(Node*));
 //    return table;
 //}
 //
-//// Вставка в таблицу
+//// Р’СЃС‚Р°РІРєР° РІ С‚Р°Р±Р»РёС†Сѓ
 //void insert(HashTable* table, const char* key, int value) {
 //    unsigned int index = hash(key);
 //    Node* current = table->buckets[index];
 //
-//    // Если ключ уже существует — обновляем значение
+//    // Р•СЃР»Рё РєР»СЋС‡ СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ вЂ” РѕР±РЅРѕРІР»СЏРµРј Р·РЅР°С‡РµРЅРёРµ
 //    while (current != NULL) {
 //        if (strcmp(current->key, key) == 0) {
 //            current->value = value;
@@ -56,13 +56,13 @@
 //        current = current->next;
 //    }
 //
-//    // Добавляем новую запись в начало списка
+//    // Р”РѕР±Р°РІР»СЏРµРј РЅРѕРІСѓСЋ Р·Р°РїРёСЃСЊ РІ РЅР°С‡Р°Р»Рѕ СЃРїРёСЃРєР°
 //    Node* new_node = create_node(key, value);
 //    new_node->next = table->buckets[index];
 //    table->buckets[index] = new_node;
 //}
 //
-//// Поиск значения по ключу
+//// РџРѕРёСЃРє Р·РЅР°С‡РµРЅРёСЏ РїРѕ РєР»СЋС‡Сѓ
 //int search(HashTable* table, const char* key) {
 //    unsigned int index = hash(key);
 //    Node* current = table->buckets[index];
@@ -73,10 +73,10 @@
 //        current = current->next;
 //    }
 //
-//    return -1; // Ключ не найден
+//    return -1; // РљР»СЋС‡ РЅРµ РЅР°Р№РґРµРЅ
 //}
 //
-//// Удаление элемента по ключу
+//// РЈРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РїРѕ РєР»СЋС‡Сѓ
 //int remove_key(HashTable* table, const char* key) {
 //    unsigned int index = hash(key);
 //    Node* current = table->buckets[index];
@@ -84,31 +84,31 @@
 //
 //    while (current != NULL) {
 //        if (strcmp(current->key, key) == 0) {
-//            // Удаляем текущий узел
+//            // РЈРґР°Р»СЏРµРј С‚РµРєСѓС‰РёР№ СѓР·РµР»
 //            if (previous == NULL) {
-//                // Удаляем первый элемент списка
+//                // РЈРґР°Р»СЏРµРј РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ СЃРїРёСЃРєР°
 //                table->buckets[index] = current->next;
 //            }
 //            else {
-//                // Удаляем не первый элемент
+//                // РЈРґР°Р»СЏРµРј РЅРµ РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚
 //                previous->next = current->next;
 //            }
 //
-//            // Освобождаем память
+//            // РћСЃРІРѕР±РѕР¶РґР°РµРј РїР°РјСЏС‚СЊ
 //            free(current->key);
 //            free(current);
 //
-//            return 1; // Успех
+//            return 1; // РЈСЃРїРµС…
 //        }
 //
 //        previous = current;
 //        current = current->next;
 //    }
 //
-//    return 0; // Ключ не найден
+//    return 0; // РљР»СЋС‡ РЅРµ РЅР°Р№РґРµРЅ
 //}
 //
-//// Освобождение памяти
+//// РћСЃРІРѕР±РѕР¶РґРµРЅРёРµ РїР°РјСЏС‚Рё
 //void free_hash_table(HashTable* table) {
 //    for (int i = 0; i < TABLE_SIZE; i++) {
 //        Node* current = table->buckets[i];
@@ -123,7 +123,7 @@
 //    free(table);
 //}
 //
-//// Пример использования
+//// РџСЂРёРјРµСЂ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ
 //int main() {
 //    HashTable* table = create_hash_table();
 //    insert(table, "one", 1);
@@ -134,7 +134,7 @@
 //    printf("Search 'two': %d\n", search(table, "two"));     // Output: 2
 //    printf("Search 'three': %d\n", search(table, "three")); // Output: 3
 //
-//    // Удаляем элемент
+//    // РЈРґР°Р»СЏРµРј СЌР»РµРјРµРЅС‚
 //    remove_key(table, "two");
 //
 //    printf("\nAfter removal:\n");
@@ -145,7 +145,7 @@
 //    return 0;
 //}
 //
-////Метод двойного хэширования
+////РњРµС‚РѕРґ РґРІРѕР№РЅРѕРіРѕ С…СЌС€РёСЂРѕРІР°РЅРёСЏ
 //#include <stdio.h>
 //#include <stdlib.h>
 //#include <string.h>
@@ -175,7 +175,7 @@
 //    unsigned long val = 0;
 //    while (*key)
 //        val += *key++;
-//    return 1 + (val % (TABLE_SIZE - 1)); // Всегда > 0
+//    return 1 + (val % (TABLE_SIZE - 1)); // Р’СЃРµРіРґР° > 0
 //}
 //
 //void init_table(HashTable* table) {
@@ -190,18 +190,18 @@
 //    for (int i = 0; i < TABLE_SIZE; i++) {
 //        Entry entry = table->entries[index];
 //        if (entry.key == NULL)
-//            return -1 - index; // Свободная позиция или пусто
+//            return -1 - index; // РЎРІРѕР±РѕРґРЅР°СЏ РїРѕР·РёС†РёСЏ РёР»Рё РїСѓСЃС‚Рѕ
 //        if (strcmp(entry.key, key) == 0)
-//            return index; // Найден ключ
+//            return index; // РќР°Р№РґРµРЅ РєР»СЋС‡
 //        index = (index + step) % TABLE_SIZE;
 //    }
-//    return -1; // Не найдено
+//    return -1; // РќРµ РЅР°Р№РґРµРЅРѕ
 //}
 //
 //void insert(HashTable* table, const char* key, int value) {
 //    int index = find_index(table, key);
 //    if (index >= 0) {
-//        table->entries[index].value = value; // Обновляем
+//        table->entries[index].value = value; // РћР±РЅРѕРІР»СЏРµРј
 //        return;
 //    }
 //
@@ -233,7 +233,7 @@
 //    free(table->entries);
 //}
 //
-//// Пример использования
+//// РџСЂРёРјРµСЂ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ
 //int main() {
 //    HashTable table;
 //    init_table(&table);
@@ -266,7 +266,7 @@
 //
 //
 ////C#
-////Метод цепочек
+////РњРµС‚РѕРґ С†РµРїРѕС‡РµРє
 //
 //using System;
 //using System.Collections.Generic;
@@ -319,7 +319,7 @@
 //		int index = GetBucketIndex(key);
 //		var bucket = _buckets[index];
 //
-//		// Обновление значения, если ключ существует
+//		// РћР±РЅРѕРІР»РµРЅРёРµ Р·РЅР°С‡РµРЅРёСЏ, РµСЃР»Рё РєР»СЋС‡ СЃСѓС‰РµСЃС‚РІСѓРµС‚
 //		foreach(var entry in bucket)
 //		{
 //			if (Equals(entry.Key, key))
@@ -420,7 +420,7 @@
 //	}
 //}
 
-////Метод двойного хэширования
+////РњРµС‚РѕРґ РґРІРѕР№РЅРѕРіРѕ С…СЌС€РёСЂРѕРІР°РЅРёСЏ
 //using System;
 //
 //public struct Entry<TKey, TValue> where TKey : class
@@ -465,7 +465,7 @@
 //		unchecked
 //		{
 //			int hash = key ? .GetHashCode() ? ? 0;
-//			return 1 + Math.Abs(hash) % (_size - 1); // Всегда > 0
+//			return 1 + Math.Abs(hash) % (_size - 1); // Р’СЃРµРіРґР° > 0
 //		}
 //	}
 //
