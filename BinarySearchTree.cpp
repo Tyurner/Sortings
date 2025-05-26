@@ -130,6 +130,50 @@
 
 
 
+//// Функция бинарного поиска
+//// Возвращает индекс элемента или -1, если не найден
+//#include <stdio.h>
+//int binarySearch(int arr[], int size, int target) {
+//    int left = 0;
+//    int right = size - 1;
+//
+//    while (left <= right) {
+//        int mid = left + (right - left) / 2; // избегаем переполнения
+//
+//        if (arr[mid] == target) {
+//            return mid; // Найдено!
+//        }
+//        else if (arr[mid] < target) {
+//            left = mid + 1; // искать в правой половине
+//        }
+//        else {
+//            right = mid - 1; // искать в левой половине
+//        }
+//    }
+//
+//    return -1; // Не найдено
+//}
+//
+//int main() {
+//    int arr[] = { 2, 5, 7, 9, 12, 16, 19 };
+//    int size = sizeof(arr) / sizeof(arr[0]);
+//    int target;
+//
+//    printf("Введите число для поиска: ");
+//    scanf_s("%d", &target);
+//
+//    int index = binarySearch(arr, size, target);
+//
+//    if (index != -1)
+//        printf("Элемент найден на позиции: %d\n", index);
+//    else
+//        printf("Элемент не найден.\n");
+//
+//    return 0;
+//}
+
+
+
 
 
 ////Реализация на C#
@@ -275,4 +319,50 @@
 //		Console.WriteLine("Search 70: " + tree.Search(70)); // True
 //		Console.WriteLine("Search 30: " + tree.Search(30)); // False
 //	}
+//}
+// 
+// 
+////Функция бинарного поиска
+//using System;
+//
+//class Program
+//{
+//    // Функция бинарного поиска O(nlogn)
+//    static int BinarySearch(int[] array, int target)
+//    {
+//        int left = 0;
+//        int right = array.Length - 1;
+//
+//        while (left <= right)
+//        {
+//            int mid = left + (right - left) / 2;
+//
+//            // Проверяем, есть ли цель в середине
+//            if (array[mid] == target)
+//                return mid;
+//
+//            // Если цель меньше — ищем в левой половине
+//            if (array[mid] > target)
+//                right = mid - 1;
+//            else
+//                // Если цель больше — ищем в правой половине
+//                left = mid + 1;
+//        }
+//
+//        // Элемент не найден
+//        return -1;
+//    }
+//
+//    static void Main()
+//    {
+//        int[] numbers = { 2, 5, 7, 9, 12, 16, 19 };
+//        int target = 12;
+//
+//        int result = BinarySearch(numbers, target);
+//
+//        if (result != -1)
+//            Console.WriteLine($"Элемент найден на позиции: {result}");
+//        else
+//            Console.WriteLine("Элемент не найден.");
+//    }
 //}
