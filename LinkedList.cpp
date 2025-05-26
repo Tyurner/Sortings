@@ -379,3 +379,60 @@
 //
 //    return 0;
 //}
+
+
+////Классический List
+//#include <iostream>
+//#include <list>
+//#include <string>
+//
+//// Структура "Самолёт"
+//struct Airplane {
+//    std::string model;
+//    int year;
+//    int tailNumber; // Бортовой номер
+//};
+//
+//// Функция для вывода информации о самолёте
+//void printAirplane(const Airplane& a) {
+//    std::cout << "Модель: " << a.model
+//        << ", Год: " << a.year
+//        << ", Бортномер: " << a.tailNumber
+//        << std::endl;
+//}
+//
+//// Функция для добавления самолёта в список
+//void addAirplaneToList(std::list<Airplane>& airplanes, const Airplane& plane) {
+//    airplanes.push_back(plane); // Добавляем самолёт в список
+//
+//    // Сортируем по бортовому номеру после каждого добавления
+//    airplanes.sort([](const Airplane& a, const Airplane& b) {
+//        return a.tailNumber < b.tailNumber;
+//        });
+//}
+//
+//// Функция для вывода всех самолётов
+//void printAllAirplanes(const std::list<Airplane>& airplanes) {
+//    for (const auto& plane : airplanes) {
+//        printAirplane(plane);
+//    }
+//}
+//
+//int main() {
+//    std::list<Airplane> airplanes;
+//
+//    // Создаем структуры в main и передаём в функцию
+//    Airplane a1 = { "Boeing 737", 2015, 12345 };
+//    Airplane a2 = { "Airbus A320", 2018, 12344 };
+//    Airplane a3 = { "Antonov An-2", 1960, 12346 };
+//
+//    // Добавляем через функцию
+//    addAirplaneToList(airplanes, a1);
+//    addAirplaneToList(airplanes, a2);
+//    addAirplaneToList(airplanes, a3);
+//
+//    // Выводим отсортированный список
+//    printAllAirplanes(airplanes);
+//
+//    return 0;
+//}
