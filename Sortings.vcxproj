@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BFSandDFS.cpp" />
     <ClCompile Include="BinarySearchTree.cpp" />
     <ClCompile Include="HashTables.cpp" />
     <ClCompile Include="LinkedList.cpp" />
